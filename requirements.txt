@@ -1,0 +1,31 @@
+# ============ REQUIREMENTS FOR STOCK CHATBOT ============
+
+# Cơ bản
+numpy
+pandas
+scikit-learn
+tqdm
+python-dotenv
+
+# Xử lý ngôn ngữ và mô hình
+transformers==4.44.2
+torch==2.3.1
+sentence-transformers==3.0.1
+accelerate
+bitsandbytes
+
+# Truy xuất thông tin
+faiss-cpu
+rank-bm25
+
+# Dữ liệu & trực quan (nếu cần)
+matplotlib
+seaborn
+
+# Tiện ích logging & debug
+loguru
+rich
+
+# Dev notebook (tùy chọn)
+ipykernel
+jupyter
