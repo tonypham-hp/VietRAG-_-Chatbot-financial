@@ -1,4 +1,4 @@
-# 💬 VietRAG - Chatbot Financial  
+#  VietRAG - Chatbot Financial  
 ### Retrieval-Augmented Legal & Financial Assistant for Vietnam
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
@@ -13,14 +13,14 @@
 and **Qwen-0.5B-Instruct** LLM to deliver reliable and contextual answers.
 
 The chatbot can:
-- ⚖️ Retrieve and explain laws, decrees, and financial regulations  
-- 📊 Query market data such as CPI, USD/VND exchange rate, volume, return, RSI, ATR...  
-- 💡 Define key economic and financial concepts  
-- 🧠 Provide basic advisory and guidance for investors  
+- Retrieve and explain laws, decrees, and financial regulations  
+- Query market data such as CPI, USD/VND exchange rate, volume, return, RSI, ATR...  
+- Define key economic and financial concepts  
+- Provide basic advisory and guidance for investors  
 
 ---
 
-## 🧩 System Architecture
+## System Architecture
 
 | Layer | Component | Description |
 |-------|------------|-------------|
