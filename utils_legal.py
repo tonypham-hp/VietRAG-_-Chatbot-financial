@@ -1,5 +1,4 @@
 # scripts/utils_legal.py
-# v11.6 - legal utilities
 # - normalize digits (drop .0)
 # - find_article_records usable by chatbot
 # - format_sources: one-line per law, prefer Điều with Khoản, remove internal filenames
@@ -179,3 +178,4 @@ def format_sources(records: List[Dict]) -> List[str]:
             seen.add(i)
             final.append(i)
     return final
+
