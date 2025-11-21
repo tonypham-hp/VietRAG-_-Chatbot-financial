@@ -1,4 +1,4 @@
-# scripts/build_index.py (v11.1 fixed NaN)
+# scripts/build_index.py 
 import os, json, pickle
 import pandas as pd
 from tqdm import tqdm
@@ -96,7 +96,6 @@ def build_faiss(docs):
     print(f"✅ Lưu FAISS tại: {FAISS_PATH}")
 
 def save_meta(metas):
-    # 🔹 FIX: chuyển NaN hoặc None → chuỗi rỗng
     clean_meta = []
     for m in metas:
         clean_meta.append({k: ("" if pd.isna(v) else v) for k, v in m.items()})
@@ -119,5 +118,6 @@ if __name__ == "__main__":
     build_faiss(docs)  
     save_meta(metas)
     print("\n🎉 Hoàn tất build_index.py ")
+
 
  
