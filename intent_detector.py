@@ -1,5 +1,5 @@
 # scripts/intent_detector.py
-# v11.6 - intent detector: legal / data / technical / advice / off_topic / count / summarize / general
+# intent detector: legal / data / technical / advice / off_topic / count / summarize / general
 
 import re
 
@@ -41,3 +41,4 @@ def detect_intent(question: str) -> str:
 
     # default
     return "general"
+
