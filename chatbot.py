@@ -1,5 +1,4 @@
 # scripts/chatbot.py
-# v11.13-final
 # Full chatbot: RAG (BM25 + FAISS) + Data queries (OHLCV/CPI/FX/volume/return) + Legal lookup
 # - Source formatting: dedupe by type (Luật / Nghị định / Thông tư / Khác), prioritize entries with Khoản
 # - Definition queries: improved retrieval + fallback scan across processed/
@@ -500,24 +499,6 @@ Dữ liệu tham khảo:
 Trả lời:
 """
     return prompt
-
-# def _clean_model_output(ans: str) -> str:
-#     # remove weird non-utf sequences and CJK contamination already removed in clean_text
-#     if not ans:
-#         return ""
-#     # remove strange repeated tokens like "xx:1C2G3T..." (heuristic)
-#     ans = re.sub(r'\b[A-Z0-9:]{8,}\b', '', ans)
-#     # keep ascii & vietnamese unicode; remove other non-printables
-#     ans = ''.join(ch for ch in ans if (32 <= ord(ch) <= 126) or ord(ch) >= 160)
-#     ans = re.sub(r'\s{2,}', ' ', ans).strip()
-#     # collapse repeated lines
-#     lines = ans.splitlines()
-#     deduped = []
-#     for l in lines:
-#         if not deduped or l.strip() != deduped[-1].strip():
-#             deduped.append(l)
-#     ans = "\n".join(deduped).strip()
-#     return ans
 
 def _clean_model_output(ans: str) -> str:
     if not ans:
@@ -1096,4 +1077,5 @@ if __name__ == "__main__":
     except Exception as e:
         print("Lỗi chương trình:", e)
         traceback.print_exc()  
+
      
