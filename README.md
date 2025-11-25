@@ -16,7 +16,8 @@ The chatbot can:
 - Retrieve and explain laws, decrees, and financial regulations  
 - Query market data such as CPI, USD/VND exchange rate, volume, return, RSI, ATR...  
 - Define key economic and financial concepts  
-- Provide basic advisory and guidance for investors  
+- Provide basic advisory and guidance for investors
+  
 
 ---
 
