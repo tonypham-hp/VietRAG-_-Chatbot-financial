@@ -12,7 +12,7 @@
 **Retrieval-Augmented Generation (RAG)** architecture combining **BM25**, **FAISS**,  
 and **Qwen-0.5B-Instruct** LLM to deliver reliable and contextual answers.
 
-The chatbot can:
+The chatbot can
 - Retrieve and explain laws, decrees, and financial regulations  
 - Query market data such as CPI, USD/VND exchange rate, volume, return, RSI, ATR...  
 - Define key economic and financial concepts  
