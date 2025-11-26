@@ -24,7 +24,7 @@ def chunk_text(text, size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
 
 def load_docs(data_dir):
     docs, metas = [], []
-    print(f"📂 Đang quét dữ liệu trong: {data_dir}\n")
+    print(f"Đang quét dữ liệu trong: {data_dir}\n")
 
     for root, _, files in os.walk(data_dir):
         for fname in files:
@@ -67,9 +67,9 @@ def load_docs(data_dir):
                         docs.append(ch)
                         metas.append({"file": fname, "text": ch})
 
-                print(f"✅ Đọc: {fname}")
+                print(f"Đọc: {fname}")
             except Exception as e:
-                print(f"❌ Lỗi đọc {fname}: {e}")
+                print(f"Lỗi đọc {fname}: {e}")
 
     print(f"\n📊 Tổng số đoạn đọc được: {len(docs)}")
     return docs, metas
@@ -80,7 +80,7 @@ def build_bm25(docs):
     bm25 = BM25Okapi(tokenized)
     os.makedirs(os.path.dirname(BM25_PATH), exist_ok=True)
     with open(BM25_PATH, "wb") as f: pickle.dump(bm25, f)
-    print(f"✅ Lưu BM25 tại: {BM25_PATH}")
+    print(f" Lưu BM25 tại: {BM25_PATH}")
 
 def build_faiss(docs):
     print("\n🔢 Đang tạo FAISS embeddings (chia batch)...")
@@ -93,7 +93,7 @@ def build_faiss(docs):
         embeddings = model.encode(batch, show_progress_bar=True)
         index.add(embeddings)
     faiss.write_index(index, FAISS_PATH)
-    print(f"✅ Lưu FAISS tại: {FAISS_PATH}")
+    print(f"Lưu FAISS tại: {FAISS_PATH}")
 
 def save_meta(metas):
     clean_meta = []
@@ -107,17 +107,18 @@ def save_meta(metas):
     os.makedirs(os.path.dirname(META_PATH), exist_ok=True)
     with open(META_PATH, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
-    print(f"✅ Lưu metadata tại: {META_PATH}")
+    print(f" Lưu metadata tại: {META_PATH}")
 
 if __name__ == "__main__":
     docs, metas = load_docs(DATA_DIR)
     if not docs:  
-        print("❌ Không tìm thấy dữ liệu hợp lệ.")
+        print("Không tìm thấy dữ liệu hợp lệ.")
         exit(0)
     build_bm25(docs)
     build_faiss(docs)  
     save_meta(metas)
-    print("\n🎉 Hoàn tất build_index.py ")
+    print("\n Hoàn tất build_index.py ")
 
 
  
+
