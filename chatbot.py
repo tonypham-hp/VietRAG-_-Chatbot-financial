@@ -5,8 +5,6 @@
 # - Conservative advice handling: use RAG if legal sources found; otherwise give general steps (no canned person-specific content)
 # - Robust: many fallbacks if components missing
 #
-# Usage: run inside your venv where dependencies are installed.
-# Make sure models and indexes exist at the configured paths (models/meta_detailed.json, models/faiss.index, models/bm25.pkl)
 
 import os
 import re
@@ -1079,3 +1077,4 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
