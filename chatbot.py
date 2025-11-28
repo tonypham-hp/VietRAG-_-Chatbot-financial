@@ -311,7 +311,7 @@ def load_components():
     else:
         print(" transformers chưa cài hoặc lỗi import.")
 
-    print(f"✅ Đã tải xong (records: {len(meta.get('records', []))})\n")
+    print(f" Đã tải xong (records: {len(meta.get('records', []))})\n")
     return bm25, faiss_index, embed_model, meta, tokenizer, model
 
 #---------------- Retrieval (BM25 + FAISS) ----------------
@@ -746,13 +746,13 @@ def chat():
 
     while True:
         try:
-            q = input("🧑‍💼 Nhà đầu tư: ").strip()
+            q = input(" Nhà đầu tư: ").strip()
         except (EOFError, KeyboardInterrupt):
-            print("\n👋 Hẹn gặp lại!"); break
+            print("\n Hẹn gặp lại!"); break
         if not q:
             continue
         if q.lower() in ["exit", "quit"]:
-            print("👋 Hẹn gặp lại!"); break
+            print(" Hẹn gặp lại!"); break
 
         intent = detect_intent(q)
 
@@ -776,26 +776,26 @@ def chat():
                     ans = f"Cổ phiếu {ticker}: return trung bình 1 ngày ≈ {v:.6f} (~{v*100:.4f}%)."
                     src_file = res.get("file", "")
                     src_label = "Dữ liệu giao dịch (OHLCV)" if src_file else ""
-                    print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn: - {src_label}\n")
+                    print(f"\n🤖 Chatbot: {ans}\n Nguồn: - {src_label}\n")
                     log_interaction(q, ans, [src_label] if src_label else [])
                     continue
                 if t == "volume":
                     ticker = res.get("ticker", "")
                     ans = f"Cổ phiếu {ticker}: tổng volume = {int(res['total']):,}, max = {int(res['max']):,}."
                     src_label = "Dữ liệu giao dịch (OHLCV)"
-                    print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn: - {src_label}\n")
+                    print(f"\n🤖 Chatbot: {ans}\n Nguồn: - {src_label}\n")
                     log_interaction(q, ans, [src_label]); continue
                 if t in ("cpi", "fx"):
                     v = res.get("value")
                     src_label = "Dữ liệu CPI" if t=="cpi" else "Dữ liệu tỷ giá USD/VND"
                     ans = f"Kết quả: {v}"
-                    print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn: - {src_label}\n")
+                    print(f"\n🤖 Chatbot: {ans}\n Nguồn: - {src_label}\n")
                     log_interaction(q, ans, [src_label]); continue
                 if t == "summary":
                     s = res["summary"]
                     ans = f"Tìm thấy dữ liệu cho {s.get('ticker')} (số bản ghi: {s.get('rows')})."
                     src_label = "Dữ liệu giao dịch (OHLCV)"
-                    print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn: - {src_label}\n")
+                    print(f"\n🤖 Chatbot: {ans}\n Nguồn: - {src_label}\n")
                     log_interaction(q, ans, [src_label]); continue
             else:
                 err_msg = err or "Không thể trả lời truy vấn dữ liệu này."
@@ -813,7 +813,7 @@ def chat():
                 general = ("Nếu bạn nghi ngờ bị lừa: 1) Giữ chứng cứ (biên lai, hợp đồng, lịch sử giao dịch, tin nhắn). "
                            "2) Khiếu nại lên công ty môi giới; nếu không giải quyết được, nộp đơn lên Ủy ban Chứng khoán/ Sở Giao dịch; "
                            "3) Gửi đơn đến cơ quan công an nếu có dấu hiệu tội phạm; 4) Xem xét liên hệ luật sư để được tư vấn.")
-                print("\n🤖 Chatbot:", general, "\n📚 Nguồn:")
+                print("\n🤖 Chatbot:", general, "\nNguồn:")
                 for s in sources:
                     if any(x in s.lower() for x in ["dataset", "nội bộ", "qa"]):
                         continue
@@ -866,7 +866,7 @@ def chat():
                     n = count_articles_in_law(meta_full, canonical)
                     if n and n > 0:
                         ans = f"{canonical} có {n} Điều (theo dữ liệu hiện có)."
-                        print("\n🤖 Chatbot:", ans, "\n📚 Nguồn:")
+                        print("\n🤖 Chatbot:", ans, "\n Nguồn:")
                         print(" -", canonical)
                         print()
                         log_interaction(q, ans, [canonical])
@@ -899,7 +899,7 @@ def chat():
                         header += ":\n\n"
                     ans = header + "\n\n".join(snippets)
                     sources = format_sources(found)
-                    print("\n🤖 Chatbot:", ans, "\n📚 Nguồn:")
+                    print("\n🤖 Chatbot:", ans, "\n Nguồn:")
                     for s in sources:
                         if any(x in s.lower() for x in ["dataset", "nội bộ", "qa"]):
                             continue
@@ -922,7 +922,7 @@ def chat():
                             snippets.append((t[:400].rsplit(".", 1)[0] + ".") if len(t) > 400 else t)
                     ans = "Tóm tắt các nội dung chính:\n\n" + "\n\n".join(snippets)
                     sources = format_sources(found_many[:6])
-                    print("\n🤖 Chatbot:", ans, "\n📚 Nguồn:")
+                    print("\n🤖 Chatbot:", ans, "\n Nguồn:")
                     for s in sources:
                         if any(x in s.lower() for x in ["dataset", "nội bộ", "qa"]):
                             continue
@@ -982,7 +982,7 @@ def chat():
                             prompt = build_prompt(q, fallback_texts)
                             ans2 = generate_answer(prompt, tokenizer, model)
                             ans2 = ans2 or ans
-                            print(f"\n🤖 Chatbot: {ans2}\n📚 Nguồn:")
+                            print(f"\n🤖 Chatbot: {ans2}\n Nguồn:")
                             # choose friendly sources
                             print(" - (Dữ liệu tham khảo nội bộ)")
                             print()
@@ -990,7 +990,7 @@ def chat():
                             continue
 
                     # normal path
-                    print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn:")
+                    print(f"\n🤖 Chatbot: {ans}\n Nguồn:")
                     for s in sources:
                         if any(x in s.lower() for x in ["dataset", "nội bộ", "qa"]):
                             continue
@@ -1055,7 +1055,7 @@ def chat():
             continue
         prompt = build_prompt(q, contexts)
         ans = generate_answer(prompt, tokenizer, model)
-        print(f"\n🤖 Chatbot: {ans}\n📚 Nguồn:")
+        print(f"\n🤖 Chatbot: {ans}\n Nguồn:")
         if sources:
             for s in sources:
                 if any(x in s.lower() for x in ["dataset", "nội bộ", "qa"]):
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
