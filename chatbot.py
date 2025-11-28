@@ -250,7 +250,7 @@ def format_sources(records: List[Dict[str, Any]]) -> List[str]:
     final_sorted = sorted(final, key=priority_label)
     return final_sorted
 
-# ---------------- LOAD COMPONENTS ----------------
+#----------- LOAD COMPONENTS ------------------
 def load_components():
     print("🔧 Đang tải mô hình và chỉ mục...")
     # BM25
@@ -260,9 +260,9 @@ def load_components():
             with open(BM25_PATH, "rb") as f:
                 bm25 = pickle.load(f)
         except Exception as e:
-            print("⚠️ Lỗi load BM25:", e)
+            print("Lỗi load BM25:", e)
     else:
-        print("⚠️ Không tìm thấy BM25 tại", BM25_PATH)
+        print("Không tìm thấy BM25 tại", BM25_PATH)
 
     # FAISS
     faiss_index = None
@@ -270,12 +270,12 @@ def load_components():
         try:
             faiss_index = faiss.read_index(FAISS_PATH)
         except Exception as e:
-            print("⚠️ Lỗi load FAISS:", e)
+            print(" Lỗi load FAISS:", e)
     else:
         if faiss is None:
-            print("⚠️ faiss module không khả dụng.")
+            print(" faiss module không khả dụng.")
         else:
-            print("⚠️ Không tìm thấy FAISS tại", FAISS_PATH)
+            print(" Không tìm thấy FAISS tại", FAISS_PATH)
 
     # embed model
     embed_model = None
@@ -283,9 +283,9 @@ def load_components():
         try:
             embed_model = SentenceTransformer(EMBED_MODEL)
         except Exception as e:
-            print("⚠️ Lỗi khởi tạo embed model:", e)
+            print(" Lỗi khởi tạo embed model:", e)
     else:
-        print("⚠️ sentence-transformers không được cài.")
+        print(" sentence-transformers không được cài.")
 
     # meta
     meta = {}
@@ -314,7 +314,7 @@ def load_components():
     print(f"✅ Đã tải xong (records: {len(meta.get('records', []))})\n")
     return bm25, faiss_index, embed_model, meta, tokenizer, model
 
-# ---------------- Retrieval (BM25 + FAISS) ----------------
+#---------------- Retrieval (BM25 + FAISS) ----------------
 def _dynamic_top_k(query: str) -> int:
     ql = query.lower()
     # definitions often require more context
@@ -1076,5 +1076,6 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
