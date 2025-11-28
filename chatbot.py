@@ -294,9 +294,9 @@ def load_components():
             with open(META_PATH, "r", encoding="utf-8") as f:
                 meta = json.load(f)
         except Exception as e:
-            print("⚠️ Lỗi đọc meta:", e)
+            print(" Lỗi đọc meta:", e)
     else:
-        print("⚠️ Không tìm thấy meta:", META_PATH)
+        print(" Không tìm thấy meta:", META_PATH)
 
     # tokenizer + model
     tokenizer = None
@@ -307,9 +307,9 @@ def load_components():
             model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
             model.to("cpu").eval()
         except Exception as e:
-            print("⚠️ Lỗi load LLM:", e)
+            print(" Lỗi load LLM:", e)
     else:
-        print("⚠️ transformers chưa cài hoặc lỗi import.")
+        print(" transformers chưa cài hoặc lỗi import.")
 
     print(f"✅ Đã tải xong (records: {len(meta.get('records', []))})\n")
     return bm25, faiss_index, embed_model, meta, tokenizer, model
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
