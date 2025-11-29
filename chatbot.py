@@ -314,7 +314,7 @@ def load_components():
     print(f" Đã tải xong (records: {len(meta.get('records', []))})\n")
     return bm25, faiss_index, embed_model, meta, tokenizer, model
 
-#---------------- Retrieval (BM25 + FAISS) ----------------
+#Retrieval (BM25 + FAISS) 
 def _dynamic_top_k(query: str) -> int:
     ql = query.lower()
     # definitions often require more context
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
