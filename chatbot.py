@@ -250,7 +250,7 @@ def format_sources(records: List[Dict[str, Any]]) -> List[str]:
     final_sorted = sorted(final, key=priority_label)
     return final_sorted
 
-#----------- LOAD COMPONENTS ------------------
+#LOAD COMPONENTS 
 def load_components():
     print("🔧 Đang tải mô hình và chỉ mục...")
     # BM25
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
