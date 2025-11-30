@@ -9,7 +9,7 @@
 ---
 
 **VietRAG** is a **Vietnamese Legal & Financial Chatbot** built on  
-**Retrieval-Augmented Generation (RAG)** architecture combining **BM25**, **FAISS**,  
+**Retrieval-Augmented Generation (RAG)** architecture combining **BM25**, **FAISS**,       
 and **Qwen-0.5B-Instruct** LLM to deliver reliable and contextual answers.
 
 The chatbot can
