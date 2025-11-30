@@ -42,5 +42,5 @@ VietRAG-Chatbot-Financial/
 ├── utils_legal.py          # Legal lookup and formatting helpers
 ├── intent_detector.py      # User intent classification
 ├── requirements.txt        # Python dependencies
-├── models/                 # Prebuilt FAISS, BM25, and metadata files ((private)
+├── models/                 # Prebuilt FAISS, BM25, and metadata files (private)
 └── processed/              # Preprocessed legal and financial datasets (private)
