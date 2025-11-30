@@ -32,7 +32,7 @@ The chatbot can
 
 ---
 
-## ⚙️ Project Structure
+## Project Structure
 
 ```bash
 VietRAG-Chatbot-Financial/
