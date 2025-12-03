@@ -6,7 +6,7 @@
 ![LLM](https://img.shields.io/badge/Qwen-0.5B--Instruct-green)
 ![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
    
----
+---     
 
 **VietRAG** is a **Vietnamese Legal & Financial Chatbot** built on  
 **Retrieval-Augmented Generation (RAG)** architecture combining **BM25**, **FAISS**,       
