@@ -4,7 +4,7 @@
 # - Definition queries: improved retrieval + fallback scan across processed/
 # - Conservative advice handling: use RAG if legal sources found; otherwise give general steps (no canned person-specific content)
 # - Robust: many fallbacks if components missing
-
+      
 import os
 import re
 import json
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
