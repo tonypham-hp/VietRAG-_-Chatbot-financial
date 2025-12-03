@@ -5,7 +5,7 @@
 ![FAISS](https://img.shields.io/badge/FAISS-RAG-orange)
 ![LLM](https://img.shields.io/badge/Qwen-0.5B--Instruct-green)
 ![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
-
+   
 ---
 
 **VietRAG** is a **Vietnamese Legal & Financial Chatbot** built on  
