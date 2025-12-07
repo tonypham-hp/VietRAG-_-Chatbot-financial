@@ -2,7 +2,7 @@
 ### Retrieval-Augmented Legal & Financial Assistant for Vietnam
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-![FAISS](https://img.shields.io/badge/FAISS-RAG-orange)
+![FAISS](https://img.shields.io/badge/FAISS-RAG-orange)   
 ![LLM](https://img.shields.io/badge/Qwen-0.5B--Instruct-green)
 ![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
    
