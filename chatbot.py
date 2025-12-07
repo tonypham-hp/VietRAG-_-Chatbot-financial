@@ -20,7 +20,7 @@ import pandas as pd
 try:
     from sentence_transformers import SentenceTransformer
 except Exception:
-    SentenceTransformer = None
+    SentenceTransformer = None   
 
 try:
     from rank_bm25 import BM25Okapi
@@ -56,7 +56,7 @@ except Exception:
         if any(x in ql for x in ["return", "volume", "cpi", "tỉ giá", "tỷ giá", "usd/vnd", "usd vnd", "usd_vnd"]):
             return "data_query"
         if any(x in ql for x in ["tóm tắt", "tóm tắt cho tôi", "tóm tắt nội dung"]):
-            return "summarize_articles"
+            return "summarize_articles"  
         return "general"
 
 # If you have utils_legal, it can be used; else fallback simple helpers below
@@ -1076,6 +1076,7 @@ if __name__ == "__main__":
         traceback.print_exc()  
 
      
+
 
 
 
