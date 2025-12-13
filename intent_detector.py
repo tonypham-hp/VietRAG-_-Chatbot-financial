@@ -10,7 +10,7 @@ def detect_intent(question: str) -> str:
     'summarize_articles', 'legal_lookup', 'general'
     """
     q = (question or "").lower().strip()   
-
+    
     # OFF-TOPIC (so sánh cá nhân, xúc phạm, đời tư, v.v.)
     if re.search(r"\b(ai|tôi|mình).*(đẹp|xinh|đẹp trai|đẹp hơn|hát hay|hát tốt|giỏi|giọng|so sánh|ai tốt hơn|xấu|cao|thấp)\b", q):
         return "off_topic"
@@ -41,4 +41,5 @@ def detect_intent(question: str) -> str:
 
     # default
     return "general"
+
 
