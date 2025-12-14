@@ -8,7 +8,7 @@ import faiss
 from rank_bm25 import BM25Okapi  
 
 DATA_DIR = "processed"
-MODEL_EMBED = "all-MiniLM-L6-v2"
+MODEL_EMBED = "all-MiniLM-L6-v2"  
 BM25_PATH = "models/bm25.pkl"
 FAISS_PATH = "models/faiss.index"
 META_PATH = "models/meta_detailed.json"
@@ -122,6 +122,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
