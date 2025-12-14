@@ -30,7 +30,7 @@ The chatbot can
 | **3️⃣ Reasoning Layer** | Qwen-0.5B-Instruct | Language model reasoning and response generation |
 | **4️⃣ Response Layer** | Rule + LLM | Formats and cites legal sources in natural Vietnamese |
 
-
+ 
 ## Project Structure
 
 ```bash
