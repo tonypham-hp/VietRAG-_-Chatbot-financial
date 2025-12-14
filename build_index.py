@@ -5,7 +5,7 @@ import pandas as pd
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 import faiss
-from rank_bm25 import BM25Okapi
+from rank_bm25 import BM25Okapi  
 
 DATA_DIR = "processed"
 MODEL_EMBED = "all-MiniLM-L6-v2"
@@ -122,5 +122,6 @@ if __name__ == "__main__":
 
 
  
+
 
 
