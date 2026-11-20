@@ -1,4 +1,5 @@
 # scripts/intent_detector.py
+# scripts/auto
 # intent detector: legal / data / technical / advice / off_topic / count / summarize / general
 
 import re
