@@ -43,3 +43,4 @@ VietRAG-Chatbot-Financial/
 ├── requirements.txt        # Python dependencies
 ├── models/                 # Prebuilt FAISS, BM25, and metadata files (private)
 └── processed/              # Preprocessed legal and financial datasets (private)
+└── (train)                 # update with 2027 (private)
